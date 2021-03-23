@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-sm-2">
+        <h4 class="heads">Trending</h4>
+        
+    </div>
+    <div class="col-sm-8">
+       
+            <h3 class="text-center heads"> AFRO-CRAFT - You Can't Miss It</h3> <br>
+            <div *ngFor="let article of articles" class="card" >
+               <img src={{article.urlToImage}}  style="width: 90%;">
+               <div class="card-body">
+                 <h5 class="card-title">{{article.source.name}} - {{article.title}}</h5>
+                 <p class="card-text">{{article.description}}</p>
+                 <hr>
+                 <span> <i class="fa fa-thumbs-up" aria-hidden="true"></i>  Like
+                             <i class="fa fa-comments" aria-hidden="true"></i>   Comments  </span>
+               </div>
+             </div>
+       
+        
+    </div>
+    <div class="col-sm-2">
+        <h4 class="heads">Available Sources</h4>
+        <div>
+            <p *ngFor="let source of sources" (click)="getArticlesBySource(source.name)">
+            {{source.name}} </p> </div>
+      
+    </div>
+</div>
